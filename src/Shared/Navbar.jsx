@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/image/logo.jpg';
 
 const Navbar = () => {
     const links = <>
         <li><NavLink className='text-xl font-semibold' to='/'>Home</NavLink></li>
         <li><NavLink className='text-xl font-semibold' to='/services'>Services</NavLink></li>
 
-        {user?.email &&
+        {/* {user?.email &&
             <li tabIndex={0}>
                 <details className=''>
                     <summary className='text-xl font-semibold'>dashboard</summary>
@@ -16,7 +18,7 @@ const Navbar = () => {
                     </ul>
                 </details>
             </li>
-        }
+        } */}
     </>
     return (
         <div className="navbar bg-base-100">
@@ -30,9 +32,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className=''>
-                    <Link to="/"> <img src={logo} className='w-24 h-24' alt="" /></Link>
+                    <Link to="/"> <img src={logo} className='w-24 h-12' alt="" /></Link>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case font-bold hidden lg:block text-xl">Pet Sitting & Walking</Link>
+                <Link to="/" className="btn btn-ghost normal-case font-bold hidden lg:block text-xl">Baby Toy Store</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -42,7 +44,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {
+                {/* {
                     user?.email ? <div className="flex">
                         <button className="btn btn-sm text-xl font-semibold btn-ghost">{user?.displayName}</button>
                         <div className="">
@@ -55,7 +57,8 @@ const Navbar = () => {
                         <Link to='/login'>
                             <button className="btn btn-sm text-xl font-semibold btn-ghost">Login</button>
                         </Link>
-                }
+                } */}
+                <button className="btn btn-sm text-xl font-semibold btn-ghost">Login</button>
             </div>
         </div>
     );
