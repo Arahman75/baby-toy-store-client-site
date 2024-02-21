@@ -15,10 +15,9 @@ const AddProduct = () => {
         }
         console.log(newProduct);
 
-        fetch('https://baby-toy-store-server-aphodko0x-abdur-rahmans-projects.vercel.app/products', {
+        fetch('https://baby-toy-store-server-abdur-rahmans-projects.vercel.app/products', {
             method: "POST",
             headers: {
-                "Access-Control-Allow-Origin": "*",
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newProduct)
