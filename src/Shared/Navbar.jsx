@@ -1,25 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/image/logo.jpg';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+    const { logOut, user } = useContext(AuthContext);
     const links = <>
         <li><NavLink className='text-xl font-semibold' to='/'>Home</NavLink></li>
-        <li><NavLink className='text-xl font-semibold' to='/services'>Services</NavLink></li>
-
-        {/* {user?.email &&
-            <li tabIndex={0}>
-                <details className=''>
-                    <summary className='text-xl font-semibold'>dashboard</summary>
-                    <ul className="p-2">
-                        <li><NavLink className='font-bold' to='/manage-services'>Manage Services</NavLink></li>
-                        <li><NavLink className='font-bold' to='/add-services'>Add Services</NavLink></li>
-                        <li><NavLink className='font-bold' to='/my-schedules'>My Schedules</NavLink></li>
-                    </ul>
-                </details>
-            </li>
-        } */}
+        <li><NavLink className='text-xl font-semibold' to='/addProduct'>Add Product</NavLink></li>
+        <li><NavLink className='text-xl font-semibold' to='/myCart'>My Cart</NavLink></li>
     </>
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(() => { })
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -44,7 +39,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* {
+                {
                     user?.email ? <div className="flex">
                         <button className="btn btn-sm text-xl font-semibold btn-ghost">{user?.displayName}</button>
                         <div className="">
@@ -57,8 +52,7 @@ const Navbar = () => {
                         <Link to='/login'>
                             <button className="btn btn-sm text-xl font-semibold btn-ghost">Login</button>
                         </Link>
-                } */}
-                <button className="btn btn-sm text-xl font-semibold btn-ghost">Login</button>
+                }
             </div>
         </div>
     );
