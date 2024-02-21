@@ -7,6 +7,7 @@ import AddProduct from '../../Page/AddProduct/AddProduct';
 import MyCart from '../../Page/MyCart/MyCart';
 import Login from '../../Page/Login/Login';
 import SingUp from '../../Page/SignUp/SingUp';
+import PrivateRoute from './PriveteRoute';
 
 const router = createBrowserRouter([
     {
@@ -20,11 +21,15 @@ const router = createBrowserRouter([
             },
             {
                 path: 'addProduct',
-                element: <AddProduct></AddProduct>
+                element:
+                    <AddProduct></AddProduct>
+
             },
             {
                 path: 'myCart',
-                element: <MyCart></MyCart>
+                element: <PrivateRoute>
+
+                    <MyCart></MyCart> </PrivateRoute>
             }
             ,
             {
