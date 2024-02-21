@@ -6,7 +6,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('product.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data)
             )
@@ -21,14 +21,11 @@ const Products = () => {
                 {
                     products.slice(0, 4).map(product => <ProductCart
                         product={product}
-                        key={product.id}
+                        key={product._id}
                     ></ProductCart>)
                 }
             </div>
-            <div className='flex justify-center items-center mt-5'>
-                <Link to="/services">
-                    <button className="btn btn-primary text-center">Show All Services</button></Link>
-            </div>
+
         </div>
     );
 };
