@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ProductCart from '../ProductCart/ProductCart';
-import { Link } from 'react-router-dom';
+
 
 const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://baby-toy-store-server-aphodko0x-abdur-rahmans-projects.vercel.app/products')
             .then(res => res.json())
-            .then(data => setProducts(data)
+            .then(data => setProducts(console.log('hello developer', data))
             )
     }, [])
     return (

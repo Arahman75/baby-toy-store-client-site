@@ -15,7 +15,7 @@ const ProductDetails = () => {
             <div className="card-body">
                 <h2 className="card-title text-3xl">Name:{name}</h2>
                 <h3 className='text-xl font-semibold'>Price : ${price}</h3>
-                <h3 className='text-xl font-semibold'>Rating : ${rating}</h3>
+                <h3 className='text-xl font-semibold'>Rating : {rating}</h3>
                 <p className='text-lg'>{description}</p>
                 <div className="card-actions justify-end">
                     <Link to='/myCart'>
